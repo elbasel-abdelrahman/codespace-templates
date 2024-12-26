@@ -1,6 +1,6 @@
 {
     "name": "Arch Linux Multilib Development Container",
     "build": {
-        "dockerfile": "https://gitlab.archlinux.org/archlinux/archlinux-docker/-/raw/4cacbe0820837f0754e7fedbdf516992008dc3e5/Dockerfile.multilib-devel"
+        "dockerfile": "Dockerfile"
     }
 }
