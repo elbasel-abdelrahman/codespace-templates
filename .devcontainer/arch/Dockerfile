@@ -1,10 +1,11 @@
 # Use the latest Arch Linux base image
-FROM archlinux:latest
-
-# Update system and install base-devel group
-RUN pacman -Syu --noconfirm base-devel
+FROM archlinux:multilib-devel
 
 # Install other necessary packages
-RUN pacman -S --noconfirm git vim python
 
-# Any other setup steps
+RUN pacman-key --init && \
+    pacman-key --populate archlinux && \
+    pacman -Sy --needed --noconfirm --disable-download-timeout archlinux-keyring && \
+    pacman -Su --noconfirm --disable-download-timeout
+
+RUN pacman -S --noconfirm git vim python zsh
